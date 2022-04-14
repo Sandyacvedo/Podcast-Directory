@@ -1,12 +1,22 @@
 import axios from 'axios';
-// import { SHA1 } from 'crypto-js';
+import cryptoJs from 'crypto-js';
+
+const apiKey = "ZJAET9JKDLADD9YSR9FZ";
+const apiSecret = "9Vj79B3H^$pBhkqGqYBtscUF5gF2n^S9996Y2$Zu";
+
+const apiHeaderTime = Math.floor(Date.now() / 1000);
+
+const authString = apiKey + apiSecret + apiHeaderTime.toString();
+const hash = cryptoJs.SHA1(authString);
+
 const instance = axios.create({
-    baseURL : process.env.REACT_APP_BASEUR,
+    baseURL : 'https://api.podcastindex.org/api/1.0',
     timeout : 10000,
     headers : {
         "User-Agent": "podcastDirectory/1.0",
-        "X-Auth-Key": process.env.REACT_APP_INDEX_KEY || "",
-        "X-Auth-Date": String(Date.UTC),
+        "X-Auth-Key": apiKey,
+        "X-Auth-Date": apiHeaderTime,
+        'Authorization': hash.toString(),
 //         Authorization: SHA1(
 //             process.env.REACT_APP_INDEX_KEY, process.env.REACT_APP_INDEX_SECRET, String(Date.UTC)
 //         )
