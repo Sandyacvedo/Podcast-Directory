@@ -5,7 +5,6 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import HomeIcon from '@mui/icons-material/Home';
 import { IconButton } from "@mui/material";
 import { MaterialUISwitch } from "../../styles/styles";
@@ -84,8 +83,8 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar color="primary" position="sticky" >
-        <Toolbar>
+      <AppBar color="primary" position="fixed" >
+        <Toolbar >
           <IconButton
             size="large"
             aria-label="account of current user"
@@ -119,10 +118,9 @@ export default function PrimarySearchAppBar() {
               inputProps={{ "aria-label": "controlled" }}
             />
           </Box>
-
         </Toolbar>
       </AppBar>
-      <Box>
+      <Box sx={{mt: '3.5rem'}}>
         <Outlet />
       </Box>
     </Box>

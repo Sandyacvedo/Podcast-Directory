@@ -13,8 +13,9 @@ const DetailPodcast = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        pt:'2vh',
-        pb: '2vh'
+        pt:'4vh',
+        pb: '3vh',
+        height: '100vh'
       }}
     >
       <Container fixed>
