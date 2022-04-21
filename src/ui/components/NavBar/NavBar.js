@@ -112,7 +112,6 @@ export default function PrimarySearchAppBar() {
             </Search>
           </form>
           <Box sx={{ flexGrow: 1 }} />
-
           <Box sx={{ display: { md: "flex" } }}>
             <MaterialUISwitch
               checked={darkTheme}

@@ -15,7 +15,7 @@ const Category = ( ) => {
 
   const handleClick = (data) => {
     dispatch( setPodcastSelected(data) )
-    navigate(`/${encodeURI(data.title).trim()}`)
+    navigate(`/${encodeURI(data?.title).trim()}`)
   }
 
   return (
@@ -23,13 +23,13 @@ const Category = ( ) => {
       {categories.map(cat => {
         // console.log(cat.data);
         return (
-          <Box key={cat.name}>
-            <Typography variant="h4" sx={{mt: '2rem'}}>{cat.name}</Typography>
+          <Box key={cat?.name}>
+            <Typography variant="h4" sx={{mt: '2rem'}}>{cat?.name}</Typography>
             <Divider sx={{mb: '2rem'}}/>
             <Grid container justifyContent={"center"} spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, md: 2, lg:4, xl:5 }}>
-            {cat.data.map(data => {
+            {cat?.data.map(data => {
               return (
-                  <Grid item md={1} key={data.title}>
+                  <Grid item md={1} key={data?.title}>
                     <Card sx={{ maxWidth: 345, maxHeight: 250, overflow: 'hidden' }} onClick={() => handleClick(data)}>
                       <CardActionArea>
                         <CardMedia

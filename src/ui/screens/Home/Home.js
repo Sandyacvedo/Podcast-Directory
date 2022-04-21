@@ -20,17 +20,10 @@ const Home = () => {
  
   useEffect(() => {
     dispatch(getPodcastList());
-    podcastCategoryName.map(cat => {
+    podcastCategoryName?.map(cat => {
       dispatch(getPodcastCategory(cat))
     })
-    // console.log("podcastList --> \n\n\n", setpodcast);
   }, [podcastCategoryName]);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   dispatch(getPodcastList());
-  // };
 
   if (loading) return <Loading />;
   return (
