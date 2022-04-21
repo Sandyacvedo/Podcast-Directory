@@ -8,13 +8,13 @@ const DetailPodcast = () => {
   return (
     <Paper
       sx={{
-        height: "90vh",
         borderRadius: "0",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        pt: "2rem",
+        pt:'2vh',
+        pb: '2vh'
       }}
     >
       <Container fixed>
@@ -41,8 +41,8 @@ const DetailPodcast = () => {
               <Grid
                 key={item}
                 item
-                xs={2.5}
-                sx={{ mb: "2rem", overflow: "hidden" }}
+                xs={3.5}
+                sx={{ mb: "1rem", overflow: "hidden" }}
               >
                 <Paper
                   variant="outlined"

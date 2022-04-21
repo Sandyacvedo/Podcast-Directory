@@ -34,11 +34,12 @@ const Home = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          pt:'2rem'
+          pt:'2rem',
+          outline: 'solid red 2px'
         }}
         >
       <Container fixed>
-      <Grid container spacing={2} className='animate-animated animate__slideInUp'>
+      <Grid container spacing={2} >
           <Grid item xs={12}>
               <Slider />
           </Grid>
