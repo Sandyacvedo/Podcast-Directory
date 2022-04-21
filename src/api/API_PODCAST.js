@@ -4,7 +4,7 @@ import cryptoJs from 'crypto-js';
 const apiKey = "ZJAET9JKDLADD9YSR9FZ";
 const apiSecret = "9Vj79B3H^$pBhkqGqYBtscUF5gF2n^S9996Y2$Zu";
 
-const apiHeaderTime = Math.floor(Date.now() / 1000);
+const apiHeaderTime = Math.floor(Date.now() / 1000).toString();
 
 const authString = apiKey + apiSecret + apiHeaderTime.toString();
 const hash = cryptoJs.SHA1(authString);
