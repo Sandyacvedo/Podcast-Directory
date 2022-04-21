@@ -31,7 +31,7 @@ const Slider = () => {
     <>
       <Typography variant="h6">TRENDING PODCASTS</Typography>
       <Carousel wrapAround={true} slidesToShow={1}>
-        {feeds?.map((item, index) => {
+        {feeds?.map((item) => {
           return (
             <Box
               key={id}
