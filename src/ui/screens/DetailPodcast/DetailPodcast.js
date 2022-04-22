@@ -11,10 +11,8 @@ const DetailPodcast = () => {
         borderRadius: "0",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
         pt:'4vh',
-        pb: '3vh',
+        pb: '25%',
         height: '100vh'
       }}
     >

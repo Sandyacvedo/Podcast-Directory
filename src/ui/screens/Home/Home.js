@@ -35,7 +35,6 @@ const Home = () => {
           alignItems: "center",
           justifyContent: "center",
           pt:'2rem',
-          outline: 'solid red 2px'
         }}
         >
       <Container fixed>

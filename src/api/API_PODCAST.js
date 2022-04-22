@@ -17,9 +17,7 @@ const instance = axios.create({
         "X-Auth-Key": apiKey,
         "X-Auth-Date": apiHeaderTime,
         'Authorization': hash.toString(),
-//         Authorization: SHA1(
-//             process.env.REACT_APP_INDEX_KEY, process.env.REACT_APP_INDEX_SECRET, String(Date.UTC)
-//         )
+
     }
 })
 
