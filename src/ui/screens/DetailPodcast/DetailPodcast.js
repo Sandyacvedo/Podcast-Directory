@@ -13,7 +13,6 @@ const DetailPodcast = () => {
         flexDirection: "column",
         pt:'4vh',
         pb: '25%',
-        height: '100vh'
       }}
     >
       <Container fixed>
