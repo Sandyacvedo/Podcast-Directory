@@ -1,10 +1,19 @@
+import React, {useEffect} from "react";
 import { Typography, Paper, Container, Grid, Button } from "@mui/material";
-import React from "react";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getpodcastLink } from "../../../feactures/podcast/podcastDashboardSlice";
 
 const DetailPodcast = () => {
+  const dispatch = useDispatch();
   const { podcastSelected } = useSelector((state) => state.podcastDashboard);
+
+  
+  useEffect(() => {
+    dispatch(getpodcastLink(podcastSelected.itunesId))
+  }, [podcastSelected])
+
+  console.log('podcast -->', podcastSelected);
   return (
     <Paper
       sx={{

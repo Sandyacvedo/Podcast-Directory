@@ -37,6 +37,23 @@ export const getpodcastSearch = createAsyncThunk(
   }
 );
 
+export const getpodcastLink = createAsyncThunk(
+  "podcastDashboard/getpodcastLink",
+  async (query, { rejectWithValue }) => {
+    try {
+      const response = await API.get(`/podcasts/byitunesid?id=${encodeURI( query )}&pretty`);
+  
+      const { feed } = response.data;
+      console.log('link -->', feed.link);
+      return feed.link;
+    }
+    catch (error) {
+      console.log('error ---> \n\n\n',rejectWithValue(error.response.data));
+      return rejectWithValue(error.response.data)
+    }
+  }
+);
+
 export const podcastDashboardSlice = createSlice({
   name: "podcastDashboard",
   initialState: initialState,
@@ -63,10 +80,22 @@ export const podcastDashboardSlice = createSlice({
     },
     [getpodcastSearch.fulfilled]: (state, { payload }) => {
       state.loading = false;
-      state.podcastSearch = payload;
+      state.podcastSelected = payload;
     },
     [getpodcastSearch.rejected]: (state, {payload}) => {
       state.podcastSearch = []
+      state.loading = false;
+    },
+    // getpodcastlink
+    [getpodcastLink.pending]: (state) => {
+      state.loading = true;
+    },
+    [getpodcastLink.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      state.podcastSelected.url = payload;
+    },
+    [getpodcastLink.rejected]: (state, {payload}) => {
+      state.podcastSelected = []
       state.loading = false;
     },
   },

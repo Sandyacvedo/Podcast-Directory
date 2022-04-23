@@ -14,9 +14,10 @@ const Category = ( ) => {
   const { categories } = useSelector((state) => state.podcastCategory)
 
   const handleClick = (data) => {
-    dispatch( setPodcastSelected(data) )
-    navigate(`/${encodeURI(data?.title).trim()}`)
+      dispatch( setPodcastSelected(data))
+      navigate(`/${encodeURI(data?.title).trim()}`)
   }
+
 
   return (
     <Box>
@@ -29,8 +30,8 @@ const Category = ( ) => {
             <Grid container justifyContent={"center"} spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, md: 2, lg:4, xl:5 }}>
             {cat?.data.map(data => {
               return (
-                  <Grid item md={1} key={data?.title}>
-                    <Card sx={{ maxWidth: 345, maxHeight: 250, overflow: 'hidden' }} onClick={() => handleClick(data)}>
+                  <Grid item md={0.9} key={data?.title}>
+                    <Card variant='outlined' sx={{ maxWidth: 345, maxHeight: 250, overflow: 'hidden', border: 'none' }} onClick={() => handleClick(data)}>
                       <CardActionArea>
                         <CardMedia
                           component="img"
@@ -39,7 +40,7 @@ const Category = ( ) => {
                           alt="podcast image"
                         />
                         <CardContent>
-                          <Typography gutterBottom variant="h6" component="div">
+                          <Typography gutterBottom variant="span" component="div">
                             {data?.title}
                           </Typography>
                           <Typography variant="body2" color="text.secondary">

@@ -21,7 +21,7 @@ const Slider = () => {
   const { feeds } = useSelector((state) => state.podcastDashboard.podcastList);
 
   const handleClick = (data) => {
-    dispatch(setPodcastSelected(data));
+    dispatch(  setPodcastSelected(data) );
     navigate(`/${encodeURI(data.title).trim()}`);
   };
 
@@ -40,7 +40,7 @@ const Slider = () => {
               <Paper
                 variant="outlined"
                 sx={{
-                  maxHeight: "40vh",
+                  maxHeight: "100vh",
                   maxWidth: "60vw",
                   borderRadius: "1rem",
                   overflow: "hidden",

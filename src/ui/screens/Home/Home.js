@@ -26,6 +26,7 @@ const Home = () => {
   }, [podcastCategoryName]);
 
   if (loading) return <Loading />;
+  
   return (
       <Paper
       sx={{

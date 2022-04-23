@@ -28,7 +28,7 @@ const Search = () => {
   );
 
   const handleClick = (data) => {
-    dispatch(setPodcastSelected(data));
+    dispatch( setPodcastSelected(data) );
     navigate(`/${encodeURI(data.title).trim()}`);
   };
 

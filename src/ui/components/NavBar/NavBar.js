@@ -12,7 +12,7 @@ import { MaterialUISwitch } from "../../styles/styles";
 import { useNavigate, Outlet, createSearchParams } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getpodcastSearch } from "../../../feactures/podcast/podcastDashboardSlice";
+import { setPodcastSelected } from "../../../feactures/podcast/podcastDashboardSlice";
 import { toggleTheme } from "../../../feactures/theme/themeSlice";
 
 const Search = styled("div")(({ theme }) => ({
@@ -62,6 +62,7 @@ export default function PrimarySearchAppBar() {
   const [search, setSearch] = useState('');
 
   const { darkTheme } = useSelector((state) => state.theme);
+  
   const handleToggle = () => {
     dispatch(toggleTheme());
   };
@@ -75,7 +76,7 @@ export default function PrimarySearchAppBar() {
   const handleSubmit = (e) => {
     e.preventDefault()
     
-    dispatch(getpodcastSearch(search))
+    dispatch(setPodcastSelected(search))
     setSearch('')
     navigate(`/search/${search}`)
   }
