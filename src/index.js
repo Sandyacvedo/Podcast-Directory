@@ -7,6 +7,7 @@ import store from './app/store';
 
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
 let persistor = persistStore(store);
 
