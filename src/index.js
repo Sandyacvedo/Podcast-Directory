@@ -14,6 +14,10 @@ const container = document.getElementById('root');
 
 const root = ReactDOM.createRoot(container);
 
+if (process.env.NODE_ENV === 'production') {
+  disableReactDevTools();
+}
+
 root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
